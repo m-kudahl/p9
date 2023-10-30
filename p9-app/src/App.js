@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          LOOOL
-        </p>
-        <a
-          className="App-link"
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          adawfawfawfawd
-        </a>
-      </header>
+const Mybutton = ({ top, background, children}) =>{ 
+  const MyButton = { 
+    position: "absolute",
+    width: "241px",
+    height: "150px", 
+    left: "39px",
+    top: top,
+    border: "1px solid #000000", 
+    background: background, 
+
+
+};
+
+return <button style={MyButton}>{children}</button>;
+
+};
+
+const App = () => {
+
+return (
+  <div className="App">
+    <Mybutton top="16px" background="#62BE59" > Start</Mybutton>
+    <Mybutton top="180px" background="#DB1414" > Stop</Mybutton>
+    <Mybutton top="345px" background="#FFFFFF" > Reset</Mybutton>
+    <Mybutton top="510px" background="#EEEEEE" > Pause </Mybutton>
+    
+  
     </div>
-  );
-}
+);
+};
+
+
 
 export default App;

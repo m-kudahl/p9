@@ -1,28 +1,41 @@
-import TodoList from "./TodoList";
-import React, { useState, useRef } from "react";
+
+import TimeLeft from './TimeLeft';
+import MyButton from './MyButton';
+import TimeEstimated from './TimeEstimated';
 
 function App() {
-  const [todos, setTodos] = useState([])
-  const todoNameRef = useRef()
 
-  function handleAddTodo(e) {
-const name = todoNameRef.current.value
-    if (name === '') return
-    setTodos(prevTodos => {
-      return [...prevTodos, {id: 1, name: name, complete: false} ]
-    }
-      )
-    todoNameRef.current.value = null
-  }
+const Mybutton = ({ top, background, children}) =>{ 
+  const MyButton = { 
+    position: "absolute",
+    width: "241px",
+    height: "150px", 
+    left: "39px",
+    top: top,
+    border: "1px solid #000000", 
+    background: background, 
 
-  return (
-    <>
-    <TodoList todos={todos} />
-    <input ref={todoNameRef} type="text" />
-    <button onClick={handleAddTodo}>Test Button</button>
-    <button>Test Button 2</button>
-    <div>Testy</div>
-    </>
-  )
-}
+
+};
+
+return <button style={MyButton}>{children}</button>;
+
+};
+
+return (
+  <>
+    <Mybutton top="16px" background="#62BE59" > Start</Mybutton>
+    <Mybutton top="180px" background="#DB1414" > Stop</Mybutton>
+    <Mybutton top="345px" background="#FFFFFF" > Reset</Mybutton>
+    <Mybutton top="510px" background="#EEEEEE" > Pause </Mybutton>
+
+    <MyButton />
+    <TimeLeft />
+    <TimeEstimated />
+  
+  </>
+);
+};
+
+
 export default App;

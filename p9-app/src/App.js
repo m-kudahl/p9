@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoList from "./TodoList";
+import React, { useState, useRef } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          LOOOL
-        </p>
-        <a
-          className="App-link"
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          adawfawfawfawd
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [todos, setTodos] = useState([])
+  const todoNameRef = useRef()
 
+  function handleAddTodo(e) {
+const name = todoNameRef.current.value
+    if (name === '') return
+    setTodos(prevTodos => {
+      return [...prevTodos, {id: 1, name: name, complete: false} ]
+    }
+      )
+    todoNameRef.current.value = null
+  }
+
+  return (
+    <>
+    <TodoList todos={todos} />
+    <input ref={todoNameRef} type="text" />
+    <button onClick={handleAddTodo}>Test Button</button>
+    <button>Test Button 2</button>
+    <div>Testy</div>
+    </>
+  )
+}
 export default App;

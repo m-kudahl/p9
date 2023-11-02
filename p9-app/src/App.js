@@ -1,6 +1,5 @@
 
 import TimeLeft from './TimeLeft';
-import MyButton from './MyButton';
 import TimeEstimated from './TimeEstimated';
 import Alertbox from './Alertbox';
 
@@ -30,7 +29,7 @@ return (
     <Mybutton top="345px" background="#FFFFFF" > Reset</Mybutton>
     <Mybutton top="510px" background="#EEEEEE" > Pause </Mybutton>
 
-    <MyButton />
+
     <TimeLeft />
     <TimeEstimated />
     <Alertbox />

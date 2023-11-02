@@ -8,5 +8,5 @@ export default function TimeLeft() {
       <p>Time Left</p>
       <p>01:20:05</p>
     </div>
-  );
+  )
 }

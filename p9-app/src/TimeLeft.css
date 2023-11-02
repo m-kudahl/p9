@@ -7,10 +7,10 @@
     padding: 10px;
     color: white;
     text-align: center;
-    width: 241px;
-    height: 150px;
-    left: 1300px;
-    top: 400px;
-    position:absolute;
+    width: 300px; 
+    height: auto; 
+    position: absolute;
+    top: 40%; 
+    right: 20%; 
     
      }

@@ -3,14 +3,14 @@
 }
 
 .estimate {
-        background: #f0f0f0;
-        padding: 10px;
-        color: white;
-        text-align: center;
-        width: 241px;
-        height: 150px;
-        left: 1300px;
-        top: 200px;
-        position:absolute;
+    background: #f0f0f0;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    width: 300px; 
+    height: auto; 
+    position: absolute;
+    top: 25%; 
+    right: 20%;
          }
         

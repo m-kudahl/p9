@@ -1,0 +1,15 @@
+.timeleft p {
+  color: black;
+}
+
+.timeleft {
+  background: #f0f0f0;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 40%;
+  right: 20%;
+}

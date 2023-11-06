@@ -1,9 +1,9 @@
 
 .navbar {
-  height: 5rem;
-  width: 40rem;
+  height: 9%;
   position:absolute;
-  right: 0px;
+  right: 0%;
+  top: 0%;
   display: flex;
   justify-content: right;
   align-items:stretch;

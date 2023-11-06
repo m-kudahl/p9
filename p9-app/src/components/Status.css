@@ -1,0 +1,42 @@
+
+.status {
+    position: absolute;
+    height: 17%;
+    width: 45%;
+    left: 30%;
+    bottom: 4%;
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.doorStatus{
+    margin-right: 5%;
+    flex: 1;
+    background-color: rgba(238, 238, 238, 1);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.doorLine {
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 1px solid #000;
+  }
+
+.laserStatus{
+    flex: 1;
+    margin-left: 5%;
+    background-color: rgba(238, 238, 238, 1);
+    text-align: center;
+    font-size: 0.85rem;
+}
+.laserLine {
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 1px solid #000;
+  }
+
+.ready {
+    color: red;
+  }

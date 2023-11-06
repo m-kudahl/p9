@@ -1,7 +1,7 @@
 .BackgroundBox {
     background: #ffffff;
-    width: 500px;
-    height: 400px;
+    width: 50%;
+    height: 40%;
     padding: 10px;
     display: flex;
     margin: 0 auto;
@@ -9,7 +9,7 @@
   }
 .CenterBox {
     width: 90%;
-    height: 90%;
+    height: 80%;
     padding: 10px;
     background: white;
     display: flex;   

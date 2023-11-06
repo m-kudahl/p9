@@ -1,7 +1,5 @@
 
-import TimeLeft from './TimeLeft';
 import MyButton from './MyButton';
-import TimeEstimated from './TimeEstimated';
 import Alertbox from './Alertbox';
 
 function App() {
@@ -31,8 +29,6 @@ return (
     <Mybutton top="510px" background="#EEEEEE" > Pause </Mybutton>
 
     <MyButton />
-    <TimeLeft />
-    <TimeEstimated />
     <Alertbox />
   
   </>

@@ -7,18 +7,20 @@ import Navbar from "./components/Navbar.js";
 import StatusBoxes from "./components/Status.js"
 import TimeLeft from './TimeLeft';
 import TimeEstimated from './TimeEstimated';
+import Alertbox from './Alertbox';
 
 
 function App(){
 return <div className="App">
-  
+  <>
+  <Alertbox />
   <Sidebar/>
   <Image/>
   <Navbar/>
   <StatusBoxes/>
   <TimeLeft />
   <TimeEstimated />
-  
+  </>
 </div>
 }
 export default App;

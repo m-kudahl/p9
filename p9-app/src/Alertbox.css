@@ -1,11 +1,16 @@
 .BackgroundBox {
-    background: #ffffff;
-    width: 50%;
-    height: 40%;
-    padding: 10px;
-    display: flex;
-    margin: 0 auto;
-    outline: black;
+  background: #ffffff;
+  width: 500px;
+  height: 400px;
+  padding: 10px;
+  display: flex;
+  outline: black;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   }
 .CenterBox {
     width: 90%;

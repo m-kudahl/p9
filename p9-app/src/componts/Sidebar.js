@@ -4,14 +4,13 @@ import '../App.css';
 
 const Mybutton = ({ top, background, children}) =>{ 
     const MyButton = { 
-      position: "absolute",
+      position: "relative",
       width: "241px",
       height: "150px", 
       left: "39px",
-      top: top,
       border: "1px solid #000000", 
       background: background, 
-  
+      marginBottom: "5%"
   
   };
   
@@ -23,11 +22,12 @@ const Mybutton = ({ top, background, children}) =>{
 function Sidebar() {
   return (
  <div className='Sidebar'> 
-    <Mybutton top="16px" background="#62BE59" > Start</Mybutton>
-    <Mybutton top="180px" background="#DB1414" > Stop</Mybutton>
-    <Mybutton top="345px" background="#FFFFFF" > Reset</Mybutton>
-    <Mybutton top="510px" background="#EEEEEE" > Pause </Mybutton>
+    <Mybutton background="#62BE59" > Start</Mybutton> 
+    <Mybutton background="#DB1414" > Stop</Mybutton>
+    <Mybutton background="#FFFFFF" > Reset</Mybutton>
+    <Mybutton background="#EEEEEE" > Pause </Mybutton>
     </div>
+  
  
   )
 }

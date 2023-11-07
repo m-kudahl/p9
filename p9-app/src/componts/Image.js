@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../logo.css';
 import Migatronic_logo from './Images/Migatronic_logo.png'
 
 

@@ -4,12 +4,12 @@
 
 .timeleft {
   background: #f0f0f0;
-  padding: 10px;
   color: white;
   text-align: center;
-  width: 300px;
-  height: auto;
+  width: 20%;
+  height: 15%;
   position: absolute;
-  top: 40%;
-  right: 5%;
+  top: 45%;
+  right: 2%; 
+  font-size: calc(1.2vw + 1.2vh);
 }

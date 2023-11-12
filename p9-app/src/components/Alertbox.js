@@ -13,7 +13,6 @@ export default function Alertbox() {
     popupWindow.document.write('</body></html>');
   };
   return (
-    <div className="BackgroundBox">
         <div className="CenterBox"> 
             <div className="AlertHeader">
                 ALERTS
@@ -25,6 +24,6 @@ export default function Alertbox() {
             </div>
 
         </div> 
-    </div>
+
   )
 }

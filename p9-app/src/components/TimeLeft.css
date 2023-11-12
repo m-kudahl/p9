@@ -1,8 +1,12 @@
 .timeleft p {
   color: black;
+  margin: 0%;
 }
 
 .timeleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background: #f0f0f0;
   color: white;
   text-align: center;

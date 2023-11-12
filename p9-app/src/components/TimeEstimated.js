@@ -3,8 +3,8 @@ import "./TimeEstimated.css";
 
 export default function TimeEstimated() {
   return (
-    <div className="estimate">
-      <p>Time Estimated</p>
+    <div className="Estimate">
+      <p>TIME ESTIMATED</p>
       <p>01:20:05</p>
     </div>
   );

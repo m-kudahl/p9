@@ -1,0 +1,26 @@
+.ChangeUser {
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    position: absolute;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(1.3vw + 1.3vh);
+    color: black;
+  }
+
+.ChangeUser a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.ChangeUser img {
+    margin-bottom: 5%;
+    width: 20%;
+    height: 30%;
+}

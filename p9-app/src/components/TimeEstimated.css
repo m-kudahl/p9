@@ -1,9 +1,9 @@
-.estimate p {
+.Estimate p {
   color: black;
   margin: 0%;
 }
 
-.estimate {
+.Estimate {
   display: flex;
   flex-direction: column;
   justify-content: space-around;

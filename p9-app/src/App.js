@@ -1,6 +1,6 @@
 import './App.css';
 import "./index.css";
-import Sidebar from './components/Sidebar.js';
+import Sidebar from './components/Sidebar/Sidebar.js';
 import Image from './components/Logo.js';
 import Navbar from "./components/Navbar.js";
 import StatusBoxes from "./components/Status.js"

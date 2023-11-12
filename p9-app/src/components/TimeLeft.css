@@ -1,9 +1,9 @@
-.timeleft p {
+.TimeLeft p {
   color: black;
   margin: 0%;
 }
 
-.timeleft {
+.TimeLeft {
   display: flex;
   flex-direction: column;
   justify-content: space-around;

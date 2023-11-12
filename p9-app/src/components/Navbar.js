@@ -2,13 +2,13 @@ import './Navbar.css'
 
 export default function Navbar () {
     return ( 
-        <nav className="navbar">
+        <nav className="Navbar">
             <ul>
-                <li className="active">
-                    <a href="/Home">Home</a>
+                <li className="Active">
+                    <a href="/Home">HOME</a>
                 </li>
-                <li className="inactive">
-                    <a href="/Setup">Setup</a>
+                <li className="Inactive">
+                    <a href="/Setup">SETUP</a>
                 </li>
             </ul>
         </nav>

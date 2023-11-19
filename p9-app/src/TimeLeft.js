@@ -8,7 +8,7 @@ export default function TimeLeft() {
 
   return (
     <div className="timeleft">
-      <p>Time Left</p>
+      <h1>Time Left</h1>
       <p>{timeLeft}</p>
     </div>
   );

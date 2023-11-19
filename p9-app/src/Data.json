@@ -1,5 +1,8 @@
 {
   "door": {
     "status": "Unlocked"
+  },
+  "time": {
+    "timeleft": "1:30:22"
   }
 }

@@ -1,11 +1,15 @@
 import React from "react";
 import "./TimeLeft.css";
 
+import Data from "./Data.json";
+
 export default function TimeLeft() {
+  const timeLeft = Data.time.timeleft;
+
   return (
     <div className="timeleft">
       <p>Time Left</p>
-      <p>01:20:05</p>
+      <p>{timeLeft}</p>
     </div>
   );
 }

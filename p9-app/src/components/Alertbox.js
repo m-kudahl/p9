@@ -19,13 +19,13 @@ export default function Alertbox() {
       .then((data) => setAlertData(data))
       .catch((error) => console.error('Error fetching alert data:', error));
   }, []);
-
+    // Create alert list and populate with data from json
   return (
     <div className="CenterBox">
       <div className="AlertHeader">
         ALERTS
       </div>
-      <table className="AlertList">
+      <table className="AlertList"> 
         <tbody>
           {alertData.map((alert, index) => (
             <tr

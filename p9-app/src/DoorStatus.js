@@ -1,10 +1,10 @@
 import React from "react";
 import "./DoorStatus.css";
 
-import safetyData from "./safetyData.json";
+import SafetyData from "./SafetyData.json";
 
 export default function TimeEstimated() {
-  const doorStatus = safetyData.door.status;
+  const doorStatus = SafetyData.door.status;
 
   return (
     <div className="doorDiv">

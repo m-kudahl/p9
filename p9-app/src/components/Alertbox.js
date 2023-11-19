@@ -27,6 +27,7 @@ export default function Alertbox() {
       </div>
       <table className="AlertList"> 
         <tbody>
+          {/* Iterate each element in alertData and use ternary operator to setup colours and functionality*/}
           {alertData.map((alert, index) => (
             <tr
               key={index}

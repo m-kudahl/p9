@@ -1,13 +1,13 @@
 
 import TimeLeft from './TimeLeft';
-import TimeEstimated from './TimeEstimated';
+import DoorStatus from './DoorStatus';
 
 function App() {
 
 return (
   <>
     <TimeLeft />
-    <TimeEstimated />
+    <DoorStatus />
     
   
   </>

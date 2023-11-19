@@ -1,8 +1,12 @@
-.estimate p {
+.doorDiv p {
   color: black;
 }
 
-.estimate {
+h1 {
+  color: black;
+}
+
+.doorDiv {
   background: #f0f0f0;
   padding: 10px;
   color: white;

@@ -9,7 +9,6 @@ return (
     <TimeLeft />
     <DoorStatus />
     
-  
   </>
 );
 };

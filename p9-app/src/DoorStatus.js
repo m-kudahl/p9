@@ -4,7 +4,7 @@ import "./DoorStatus.css";
 import safetyData from "./safetyData.json";
 
 export default function TimeEstimated() {
-  const doorStatus = safetyData.door.doorStatus;
+  const doorStatus = safetyData.door.status;
 
   return (
     <div className="doorDiv">

@@ -3,8 +3,8 @@ import "./TimeLeft.css";
 
 export default function TimeLeft() {
   return (
-    <div className="timeleft">
-      <p>Time Left</p>
+    <div className="TimeLeft">
+      <p>TIME LEFT</p>
       <p>01:20:05</p>
     </div>
   );

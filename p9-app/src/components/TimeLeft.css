@@ -1,0 +1,19 @@
+.TimeLeft p {
+  color: black;
+  margin: 0%;
+}
+
+.TimeLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #f0f0f0;
+  color: white;
+  text-align: center;
+  width: 20%;
+  height: 15%;
+  position: absolute;
+  top: 45%;
+  right: 2%; 
+  font-size: calc(1.2vw + 1.2vh);
+}

@@ -1,13 +1,13 @@
-
 import './App.css';
 import "./index.css";
-import Sidebar from './componts/Sidebar';
-import Image from './componts/Image';
+import Sidebar from './components/Sidebar/Sidebar.js';
+import Image from './components/Logo.js';
 import Navbar from "./components/Navbar.js";
 import StatusBoxes from "./components/Status.js"
-import TimeLeft from './TimeLeft';
-import TimeEstimated from './TimeEstimated';
-import Alertbox from './Alertbox';
+import TimeLeft from './components/TimeLeft.js';
+import TimeEstimated from './components/TimeEstimated.js';
+import Alertbox from './components/Alertbox.js';
+
 
 
 function App(){

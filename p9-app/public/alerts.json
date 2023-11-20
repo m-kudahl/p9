@@ -1,0 +1,6 @@
+[
+    { "type": "error", "message": "ERROR 7: PLACEHOLDER" },
+    { "type": "warning", "message": "WARNING: PLACEHOLDER" },
+    { "type": "info", "message": "Placeholder" }
+  ]
+  

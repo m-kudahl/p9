@@ -1,0 +1,8 @@
+{
+  "door": {
+    "status": "UNLOCKED"
+  },
+  "laser": {
+    "status": "NOT READY"
+  }
+}

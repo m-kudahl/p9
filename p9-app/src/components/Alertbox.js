@@ -11,14 +11,13 @@ export default function Alertbox() {
     popupWindow.document.write('<button onclick="window.close();">Close</button>');
     popupWindow.document.write('</body></html>');
   };
+  
 
-  useEffect(() => {
     // Fetch alert data from the JSON file
-    fetch('/alerts.json')
+    fetch('https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/public/alerts.json')
       .then((response) => response.json())
       .then((data) => setAlertData(data))
       .catch((error) => console.error('Error fetching alert data:', error));
-  }, []);
     // Create alert list and populate with data from json
   return (
     <div className="CenterBox">

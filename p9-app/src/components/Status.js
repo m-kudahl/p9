@@ -1,10 +1,18 @@
+import React, { useState, useEffect } from "react";
 import "./Status.css";
 
-import Data from "./Data.json";
-
 export default function StatusBoxes() {
-  const doorStatus = Data.door.status;
-  const laserStatus = Data.laser.status;
+  const [doorStatus, setDoorStatus] = useState("");
+  const [laserStatus, setLaserStatus] = useState("");
+
+  // Fetch status data from the JSON file
+  fetch("https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/public/data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      setDoorStatus(data.door.status);
+      setLaserStatus(data.laser.status);
+    })
+    .catch((error) => console.error("Error fetching status data:", error));
 
   return (
     <div className="Status">
@@ -12,8 +20,8 @@ export default function StatusBoxes() {
         <h2>DOOR STATUS</h2>
         <div className="DoorLine"></div>
         <h2>{doorStatus}</h2>
-      </div>    
-      
+      </div>
+
       <div className="LaserStatus">
         <h2>LASER STATUS</h2>
         <div className="LaserLine"></div>

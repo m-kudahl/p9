@@ -1,8 +1,26 @@
 {
-  "door": {
-    "status": "UNLOCKED"
+  "door":  [
+    { 
+    "status": "UNLOCKED",
+    "id":2
   },
-  "laser": {
-    "status": "NOT READY"
+  {
+  "status": "LOCKED", 
+  "id":1
+}
+
+],
+
+  "laser":[
+    {
+    "status": "NOT READY",
+    "id": 3
+  }, 
+  {
+    "status": "READY", 
+    "id":4
   }
+  
+]
+
 }

@@ -18,12 +18,14 @@ useEffect(() => {
     return response.json();
   })
   .then ((data) => {
-  
-    console.log(data)
-    const doorStatuses = data.door.map(item => item.status);
-    const laserStatuses = data.laser.map(item => item.status);
-    setDoorStatus(doorStatuses.join(', '));
-    setLaserStatus(laserStatuses.join(', '));
+    if (data.door && data.door.length > 0) {
+      // Update door status state
+      setDoorStatus(data.door[0].status);
+    }
+    if (data.laser && data.laser.length > 0) {
+      // Update laser status state
+      setLaserStatus(data.laser[0].status);
+    }
   })
   .catch(error => {
     console.error('Error fetchinhg data', error);

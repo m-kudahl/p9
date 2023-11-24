@@ -2,7 +2,7 @@
   "door":  [
   
   {
-  "status": "UNLOCKED", 
+  "status": "LOCKED", 
   "id":1
 }
 
@@ -10,7 +10,7 @@
 
   "laser":[
   {
-    "status": "NOT READY", 
+    "status": "READY", 
     "id":4
   }
   

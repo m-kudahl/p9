@@ -1,22 +1,15 @@
-import "./Status.css";
-import { useState } from "react";
-import { useEffect } from "react";
 
+import { useState, useEffect } from "react";
+import "./Status.css";
 
 export default function StatusBoxes() {
-
 const [doorStatus, setDoorStatus] = useState("");
 const [laserStatus, setLaserStatus] = useState("");
 
 useEffect(() => {
 
   fetch('https://raw.githubusercontent.com/m-kudahl/p9/Hiwot/p9-app/src/components/Data.json')
-  .then(response =>{
-    if(!response.ok) {
-    throw new Error(response.status);
-  }
-    return response.json();
-  })
+  .then(response => response.json())
   .then ((data) => {
     if (data.door && data.door.length > 0) {
       // Update door status state
@@ -27,11 +20,10 @@ useEffect(() => {
       setLaserStatus(data.laser[0].status);
     }
   })
-  .catch(error => {
-    console.error('Error fetchinhg data', error);
+  .catch((error) => 
+    console.error('Error fetching data', error));
 
 });
-},[]);
 
   //const doorStatus = Data.door.status;
   //const laserStatus = Data.laser.status;

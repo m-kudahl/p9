@@ -1,19 +1,16 @@
 {
-  "door":  [
+  "door":  
   
   {
-  "status": "LOCKED", 
+  "status": "UNLOCKED", 
   "id":1
-}
+},
 
-],
-
-  "laser":[
+  "laser":
   {
     "status": "READY", 
     "id":4
   }
   
-]
 
 }

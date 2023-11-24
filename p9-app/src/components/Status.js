@@ -8,7 +8,7 @@ const [laserStatus, setLaserStatus] = useState("");
 
 useEffect(() => {
 
-  fetch('')
+  fetch('https://raw.githubusercontent.com/m-kudahl/p9/Hiwot/p9-app/public/Data.json')
   .then(response => response.json())
   .then ((data) => {
     if (data.door && data.door.length > 0) {

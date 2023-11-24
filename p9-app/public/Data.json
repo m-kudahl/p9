@@ -8,7 +8,7 @@
 
   "laser":
   {
-    "status": "READY", 
+    "status": "not READY", 
     "id":4
   }
   

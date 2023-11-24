@@ -10,20 +10,16 @@ useEffect(() => {
 
   fetch('https://raw.githubusercontent.com/m-kudahl/p9/Hiwot/p9-app/public/Data.json')
   .then(response => response.json())
-  .then ((data) => {
-    if (data.door && data.door.length > 0) {
-      // Update door status state
-      setDoorStatus(data.door[0].status);
-    }
-    if (data.laser && data.laser.length > 0) {
-      // Update laser status state
-      setLaserStatus(data.laser[0].status);
-    }
+  .then ((data) => {  
+      setDoorStatus(data.door.status);
+      setLaserStatus(data.laser.status);
+    
   })
   .catch((error) => 
     console.error('Error fetching data', error));
 
 });
+
 
   //const doorStatus = Data.door.status;
   //const laserStatus = Data.laser.status;

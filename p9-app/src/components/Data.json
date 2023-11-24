@@ -2,7 +2,7 @@
   "door":  [
   
   {
-  "status": "LOCKED", 
+  "status": "UNLOCKED", 
   "id":1
 }
 

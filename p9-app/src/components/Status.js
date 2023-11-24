@@ -10,7 +10,7 @@ const [laserStatus, setLaserStatus] = useState("");
 
 useEffect(() => {
 
-  fetch('https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/public/data.json')
+  fetch('https://raw.githubusercontent.com/m-kudahl/p9/Hiwot/p9-app/src/components/Data.json')
   .then(response =>{
     if(!response.ok) {
     throw new Error(response.status);

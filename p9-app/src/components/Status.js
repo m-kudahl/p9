@@ -5,8 +5,8 @@ import { useEffect } from "react";
 
 export default function StatusBoxes() {
 
-const [doorStatus, setdoorStatus] = useState("");
-const [laserStatus, setlaserStatus] = useState("");
+const [doorStatus, setDoorStatus] = useState("");
+const [laserStatus, setLaserStatus] = useState("");
 
 useEffect(() => {
 
@@ -22,9 +22,8 @@ useEffect(() => {
     console.log(data)
     const doorStatuses = data.door.map(item => item.status);
     const laserStatuses = data.laser.map(item => item.status);
-    console.log('Door Statuses', doorStatuses);
-    console.log('Laser Statuses', laserStatuses);
-
+    setDoorStatus(doorStatuses.join(', '));
+    setLaserStatus(laserStatuses.join(', '));
   })
   .catch(error => {
     console.error('Error fetchinhg data', error);

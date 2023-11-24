@@ -31,7 +31,7 @@ useEffect(() => {
     console.error('Error fetchinhg data', error);
 
 });
-});
+},[]);
 
   //const doorStatus = Data.door.status;
   //const laserStatus = Data.laser.status;

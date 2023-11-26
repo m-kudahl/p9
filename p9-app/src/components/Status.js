@@ -21,6 +21,7 @@ useEffect(() => {
 });
 
 
+
   //const doorStatus = Data.door.status;
   //const laserStatus = Data.laser.status;
 

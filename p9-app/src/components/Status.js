@@ -32,7 +32,7 @@ useEffect(() => {
         <div className="DoorLine"></div>
         <h2>{doorStatus}</h2>
       </div>    
-      
+    
       <div className="LaserStatus">
         <h2>LASER STATUS</h2>
         <div className="LaserLine"></div>

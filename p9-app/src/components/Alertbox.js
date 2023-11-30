@@ -12,14 +12,14 @@ export default function Alertbox() {
     popupWindow.document.write('</body></html>');
   };
   
-  const handleAddAlert = async () => { // Function to add new alerts
+  const handleAddAlert = async (type) => { // Function to add new alerts
     try {  // We are using a try-catch here because inputting a line of text is (probably) an easy way to make errors (probably not needed before we implement functionality for the client to input new alerts in the browser instead of in code)
       const response = await fetch('http://localhost:8080/api/alerts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // This shows that the content is in a .json format
         },
-        body: JSON.stringify({ type: 'error', message: 'New Alert Message' }), // This is what is sent to the server in the body. Currently this is how we input new alerts. 
+        body: JSON.stringify({ type: type, message: 'New Alert Message' }), // This is what is sent to the server in the body. Currently this is how we input new alerts. 
       });
 
       if (!response.ok) {
@@ -47,7 +47,9 @@ export default function Alertbox() {
       <div className="AlertHeader">
         ALERTS
       </div>
-      <button onClick={handleAddAlert}>Add Alert</button>
+        <button onClick={() => handleAddAlert('error')}>Add Error Alert</button> 
+        <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
+        <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
       <table className="AlertList">
         <tbody>
           {alertData.map((alert, index) => (

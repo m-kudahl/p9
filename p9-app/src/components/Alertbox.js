@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import './Alertbox.css';
 
-export default function Alertbox() {
-  const [alertData, setAlertData] = useState([]); // Usestate is a "hook" (function that allows components to use states). It allows us to store the current state value (alertData) and gives us a function (setAlertData) we can use to update alertData
+export default function Alertbox({setPopupOpen}) {
+  const [alertData, setAlertData] = useState([]);
 
-  const openCustomPopup = (message) => {
-    const popupWindow = window.open('', 'PopupWindow', 'width=400,height=200');
-    popupWindow.document.write('<html><head><title>Custom Popup</title></head><body>');
-    popupWindow.document.write(`<h1>${message}</h1>`);
-    popupWindow.document.write('<button onclick="window.close();">Close</button>');
-    popupWindow.document.write('</body></html>');
+ const openPopup = () => {
+    setPopupOpen(true);
   };
   
   const handleAddAlert = async () => { // Function to add new alerts
@@ -17,7 +13,7 @@ export default function Alertbox() {
       const response = await fetch('http://localhost:8080/api/alerts', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // This shows that the content is in a .json format
+          'Content-Type': 'application/json', // This   s that the content is in a .json format
         },
         body: JSON.stringify({ type: 'error', message: 'New Alert Message' }), // This is what is sent to the server in the body. Currently this is how we input new alerts. 
       });
@@ -44,6 +40,7 @@ export default function Alertbox() {
 
   return (
     <div className="CenterBox">
+      
       <div className="AlertHeader">
         ALERTS
       </div>
@@ -54,14 +51,16 @@ export default function Alertbox() {
             <tr
               key={index}
               className="AlertEntry"
+              onClick={openPopup}
               style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit' }}
-              onClick={() => openCustomPopup(alert.message)}
+              
             >
               <td>{alert.message}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      
     </div>
   );
 }

@@ -1,13 +1,14 @@
 .CenterBox {
   height: 50%;
   width: 45%;
-  position: absolute;
+  position: relative;
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
 }
 
 
@@ -36,6 +37,4 @@
   margin: 20px;
   width: 80%;
   font-size: calc(1.3vw + 1.3vh);
-  
-  
 }

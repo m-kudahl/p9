@@ -22,7 +22,7 @@ app.get('/api/alerts', async (req, res) => {
     const data = await response.json();
     alertData = data; // import data from github into alertData array
     res.json(data);
-    res.status(200).json({ message: 'Alerts fetched from Github'}) // Tags response with a HTTP status code. 2xx = good 4xx = bad request 5xx = internal server error
+    //res.status(200).json({ message: 'Alerts fetched from Github'}) // Tags response with a HTTP status code. 2xx = good 4xx = bad request 5xx = internal server error
   } catch (error) {
     console.error('Error fetching alerts from GitHub:', error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -37,7 +37,7 @@ app.put('/api/alerts', async (req, res) => {
 
     alertData = updatedData; // Update the in-memory data
     res.json(updatedData); // Respond with the updated data
-    res.status(201).json({ message: 'Updated alerts sent'})
+    //res.status(201).json({ message: 'Updated alerts sent'})
 
   } catch (error) {
     console.error('Error updating alerts on the server:', error);
@@ -56,7 +56,7 @@ app.post('/api/alerts', (req, res) => {
 
     // Respond with the updated data
     res.json(alertData);
-    res.status(202).json({ message: 'New alert added'})
+    //res.status(202).json({ message: 'New alert added'})
   } catch (error) {
     console.error('Error adding alert on the server:', error);
     res.status(500).json({ error: 'Internal Server Error' });

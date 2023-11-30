@@ -1,0 +1,9 @@
+.sidebar-button {
+    position: absolute;
+    width: 70%;
+    height: 20%;
+    left: 15%;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    font-size: calc(2vw + 2vh);
+  }

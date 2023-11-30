@@ -3,6 +3,7 @@ import './Alertbox.css';
 
 export default function Alertbox({setPopupOpen}) {
   const [alertData, setAlertData] = useState([]);
+  const [selectedAlert, setSelectedAlert] = useState(null); // New state to store the selected alert
 
  const openPopup = () => {
     setPopupOpen(true);
@@ -15,7 +16,7 @@ export default function Alertbox({setPopupOpen}) {
         headers: {
           'Content-Type': 'application/json', // This   s that the content is in a .json format
         },
-        body: JSON.stringify({ type: 'error', message: 'New Alert Message' }), // This is what is sent to the server in the body. Currently this is how we input new alerts. 
+        body: JSON.stringify({ type: 'error', message: 'New Alert Message', description: 'Description text' }), // This is what is sent to the server in the body. Currently this is how we input new alerts. 
       });
 
       if (!response.ok) {
@@ -38,6 +39,13 @@ export default function Alertbox({setPopupOpen}) {
       .catch((error) => console.error('Error fetching alert data:', error));
   }, []); // This is an "Empty dependency array" which means that the useEffect will only be run once at server start.
 
+  const handleAlertClick = (index) => {
+    setSelectedAlert(alertData[index]);
+    openPopup();
+  };
+
+  
+
   return (
     <div className="CenterBox">
       
@@ -49,14 +57,13 @@ export default function Alertbox({setPopupOpen}) {
         <tbody>
           {alertData.map((alert, index) => (
             <tr
-              key={index}
-              className="AlertEntry"
-              onClick={openPopup}
-              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit' }}
-              
-            >
-              <td>{alert.message}</td>
-            </tr>
+            key={index}
+            className="AlertEntry"
+            onClick={() => handleAlertClick(index)}
+            style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit' }}
+          >
+            <td>{alert.message}</td>
+          </tr>
           ))}
         </tbody>
       </table>

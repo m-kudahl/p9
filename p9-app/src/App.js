@@ -14,17 +14,19 @@ import Popup from './components/Popup.js';
 
 function App(){
   const [isPopupOpen, setPopupOpen] = useState(false);
+  const [selectedAlert, setSelectedAlert] = useState(null);
+
 
 return <div className="App">
   <>
-  <Alertbox setPopupOpen={setPopupOpen} />
+  <Alertbox setPopupOpen={setPopupOpen} setSelectedAlert={setSelectedAlert} />
   <Sidebar/>
   <Image/>
   <Navbar/>
   <StatusBoxes/>
   <TimeLeft />
   <TimeEstimated />
-  {isPopupOpen && <Popup setPopupOpen={setPopupOpen} />} 
+  {isPopupOpen && <Popup setPopupOpen={setPopupOpen} selectedAlert={selectedAlert} />}
   </>
 </div>
 }

@@ -24,3 +24,8 @@
     top: 16px;
     right: 16px;
   }
+
+  .description {
+    width: 50%;
+    height: 4vh;
+  }

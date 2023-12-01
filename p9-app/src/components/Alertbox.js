@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import './Alertbox.css';
 
 export default function Alertbox() {
-  const [alertData, setAlertData] = useState([]);
+  const [alertData, setAlertData] = useState([]); // Usestate is a "hook" (function that allows components to use states). It allows us to store the current state value (alertData) and gives us a function (setAlertData) we can use to update alertData
 
   const openCustomPopup = (message) => {
     const popupWindow = window.open('', 'PopupWindow', 'width=400,height=200');
@@ -12,21 +12,46 @@ export default function Alertbox() {
     popupWindow.document.write('</body></html>');
   };
   
+  const handleAddAlert = async (type) => { // Function to add new alerts
+    try {  // We are using a try-catch here because inputting a line of text is (probably) an easy way to make errors (probably not needed before we implement functionality for the client to input new alerts in the browser instead of in code)
+      const response = await fetch('http://localhost:8080/api/alerts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // This shows that the content is in a .json format
+        },
+        body: JSON.stringify({ type: type, message: 'New Alert Message' }), // This is what is sent to the server in the body. Currently this is how we input new alerts. 
+      });
 
-    // Fetch alert data from the JSON file
-    fetch('https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/public/alerts.json')
+      if (!response.ok) {
+        throw new Error('Failed to add new alert');
+      } 
+      const updatedData = await response.json();
+      
+      setAlertData(updatedData); // Update the state of alertData which visually adds the new alert to the table in the browser
+
+    } catch (error) {
+      console.error('Error adding alert:', error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch alert data from the server
+    fetch('http://localhost:8080/api/alerts')
       .then((response) => response.json())
       .then((data) => setAlertData(data))
       .catch((error) => console.error('Error fetching alert data:', error));
-    // Create alert list and populate with data from json
+  }, []); // This is an "Empty dependency array" which means that the useEffect will only be run once at server start.
+
   return (
     <div className="CenterBox">
       <div className="AlertHeader">
         ALERTS
       </div>
-      <table className="AlertList"> 
+        <button onClick={() => handleAddAlert('error')}>Add Error Alert</button> 
+        <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
+        <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
+      <table className="AlertList">
         <tbody>
-          {/* Iterate each element in alertData and use ternary operator to setup colours and functionality*/}
           {alertData.map((alert, index) => (
             <tr
               key={index}

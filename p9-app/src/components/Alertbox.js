@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import './Alertbox.css';
 
-export default function Alertbox() {
+export default function Alertbox(setPopupOpen) {
   const [alertData, setAlertData] = useState([]); // Usestate is a "hook" (function that allows components to use states). It allows us to store the current state value (alertData) and gives us a function (setAlertData) we can use to update alertData
-
-  const openCustomPopup = (message) => {
-    const popupWindow = window.open('', 'PopupWindow', 'width=400,height=200');
-    popupWindow.document.write('<html><head><title>Custom Popup</title></head><body>');
-    popupWindow.document.write(`<h1>${message}</h1>`);
-    popupWindow.document.write('<button onclick="window.close();">Close</button>');
-    popupWindow.document.write('</body></html>');
+  const [selectedAlert, setSelectedAlert] = useState(null); // New state to store the selected alert
+  
+  const openPopup = () => {
+    setPopupOpen(true);
   };
   
   const handleAddAlert = async (type) => { // Function to add new alerts
@@ -42,6 +39,13 @@ export default function Alertbox() {
       .catch((error) => console.error('Error fetching alert data:', error));
   }, []); // This is an "Empty dependency array" which means that the useEffect will only be run once at server start.
 
+const handleAlertClick = (index) => {
+    setSelectedAlert(alertData[index]);
+    openPopup();
+  };
+
+  
+  
   return (
     <div className="CenterBox">
       <div className="AlertHeader">
@@ -57,7 +61,7 @@ export default function Alertbox() {
               key={index}
               className="AlertEntry"
               style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit' }}
-              onClick={() => openCustomPopup(alert.message)}
+              onClick={() => handleAlertClick(index)}
             >
               <td>{alert.message}</td>
             </tr>

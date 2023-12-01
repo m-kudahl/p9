@@ -7,13 +7,11 @@ import StatusBoxes from "./components/Status.js"
 import TimeLeft from './components/TimeLeft.js';
 import Alertbox from './components/Alertbox.js';
 import Popup from './components/Popup.js';
-
+import React, { useState } from "react";
+  
 function App(){
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedAlert, setSelectedAlert] = useState(null);
-
-  
-function App(){
 return <div className="App">
   <>
   <Alertbox setPopupOpen={setPopupOpen} setSelectedAlert={setSelectedAlert} />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './Alertbox.css';
 
-export default function Alertbox(setPopupOpen) {
+export default function Alertbox({setPopupOpen}) {
   const [alertData, setAlertData] = useState([]); // Usestate is a "hook" (function that allows components to use states). It allows us to store the current state value (alertData) and gives us a function (setAlertData) we can use to update alertData
   const [selectedAlert, setSelectedAlert] = useState(null); // New state to store the selected alert
   

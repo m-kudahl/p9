@@ -1,0 +1,31 @@
+.Popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .PopupInner {
+    position: absolute;
+    left: 10%;
+    width: 40%;
+    height: 30vh;
+    padding: 32px;
+    background-color: #f0f0f0;
+  }
+  
+  .PopupInner .CloseButtonPopup {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .description {
+    width: 50%;
+    height: 4vh;
+  }

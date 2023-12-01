@@ -7,7 +7,6 @@ export default function Popup({ setPopupOpen, selectedAlert }) {
     const closePopup = () => {
       setPopupOpen(false);
     };
-    console.log(selectedAlert)
     return (
       <div className="Popup">
         <div className="PopupInner">

@@ -41,6 +41,7 @@ export default function Alertbox({setPopupOpen}) {
 
 const handleAlertClick = (index) => {
     setSelectedAlert(alertData[index]);
+    console.log(selectedAlert);
     openPopup();
   };
 

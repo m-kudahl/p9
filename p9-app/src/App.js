@@ -6,7 +6,6 @@ import Image from './components/Logo.js';
 import Navbar from "./components/Navbar.js";
 import StatusBoxes from "./components/Status.js"
 import TimeLeft from './components/TimeLeft.js';
-import TimeEstimated from './components/TimeEstimated.js';
 import Alertbox from './components/Alertbox.js';
 import Popup from './components/Popup.js';
 
@@ -25,7 +24,6 @@ return <div className="App">
   <Navbar/>
   <StatusBoxes/>
   <TimeLeft />
-  <TimeEstimated />
   {isPopupOpen && <Popup setPopupOpen={setPopupOpen} selectedAlert={selectedAlert} />}
   </>
 </div>

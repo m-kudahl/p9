@@ -6,11 +6,10 @@ export default function StatusBoxes() {
 const [doorStatus, setDoorStatus] = useState();
 const [laserStatus, setLaserStatus] = useState();
 
-useEffect(() => {
-
-  fetch('https://raw.githubusercontent.com/m-kudahl/p9/Hiwot/p9-app/public/Data.json')
-  .then(response => response.json())
-  .then ((data) => {  
+  // Fetch status data from the JSON file
+  fetch("https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/src/components/Data.json")
+    .then((response) => response.json())
+    .then((data) => {
       setDoorStatus(data.door.status);
       setLaserStatus(data.laser.status);
     

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './App.css';
 import "./index.css";
 import Sidebar from './components/Sidebar/Sidebar.js';
@@ -7,24 +6,24 @@ import Navbar from "./components/Navbar.js";
 import StatusBoxes from "./components/Status.js"
 import TimeLeft from './components/TimeLeft.js';
 import Alertbox from './components/Alertbox.js';
-import Popup from './components/Popup.js';
+
 
 
 
 function App(){
-  const [isPopupOpen, setPopupOpen] = useState(false);
-  const [selectedAlert, setSelectedAlert] = useState(null);
-
-
 return <div className="App">
   <>
-  <Alertbox setPopupOpen={setPopupOpen} setSelectedAlert={setSelectedAlert} />
+  <Alertbox />
   <Sidebar/>
   <Image/>
   <Navbar/>
   <StatusBoxes/>
   <TimeLeft />
+<<<<<<< HEAD
   {isPopupOpen && <Popup setPopupOpen={setPopupOpen} selectedAlert={selectedAlert} />}
+=======
+
+>>>>>>> parent of b97c8e91 (Merge branch 'Jonas')
   </>
 </div>
 }

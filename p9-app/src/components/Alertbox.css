@@ -1,9 +1,9 @@
 .CenterBox {
   height: 50%;
-  width: 45%;
+  width: 37%;
   position: absolute;
-  top: 47%;
-  left: 50%;
+  top: 49%;
+  left: 52%;
   transform: translate(-50%, -50%);
   padding: 10px;
   background: white;
@@ -22,6 +22,7 @@
   padding: 10px 0;
   text-align: center;
   font-size: calc(1.5vw + 1.5vh);
+  font-weight: 545;
   
 }
 .AlertList {
@@ -36,6 +37,6 @@
   margin: 20px;
   width: 80%;
   font-size: calc(1.3vw + 1.3vh);
-  
+ 
   
 }

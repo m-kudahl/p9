@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import "./Status.css";
 
 export default function StatusBoxes() {
-const [doorStatus, setDoorStatus] = useState("");
-const [laserStatus, setLaserStatus] = useState("");
+const [doorStatus, setDoorStatus] = useState();
+const [laserStatus, setLaserStatus] = useState();
 
 useEffect(() => {
 
@@ -17,10 +17,9 @@ useEffect(() => {
   })
   .catch((error) => 
     console.error('Error fetching data', error));
+   
 
 });
-
-
 
   //const doorStatus = Data.door.status;
   //const laserStatus = Data.laser.status;

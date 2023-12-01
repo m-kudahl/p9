@@ -13,9 +13,10 @@
 .DoorStatus{
     margin-right: 5%;
     flex: 1;
-    background-color: rgba(238, 238, 238, 1);
+    background-color: #eeeeee;
     text-align: center;
     font-size: calc(0.7vw + 0.7vh);
+   
 }
 
 .DoorLine {
@@ -27,9 +28,10 @@
 .LaserStatus{
     flex: 1;
     margin-left: 5%;
-    background-color: rgba(238, 238, 238, 1);
+    background-color: #eeeeee;
     text-align: center;
     font-size: calc(0.7vw + 0.7vh);
+    
 }
 .LaserLine {
     margin: 0 auto;

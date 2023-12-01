@@ -4,6 +4,8 @@
   border-right: 1px solid black;
   top: 0%;
   left: 0%;
+  padding-left: 6px; 
+  padding-right: 1%;
   position: absolute;
    
 }

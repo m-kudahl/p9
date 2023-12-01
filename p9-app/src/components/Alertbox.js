@@ -33,7 +33,7 @@ export default function Alertbox() {
       console.error('Error adding alert:', error);
     }
   };
-
+                      // ooooooooooooooooooooOOOOOOOOOOOOOOOOOOOooooooooooooooooooooooooooooooooOOOOOOOOOOOOOooooooooooooooooo
   useEffect(() => {
     // Fetch alert data from the server
     fetch('http://localhost:8080/api/alerts')

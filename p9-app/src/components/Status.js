@@ -6,7 +6,7 @@ export default function StatusBoxes() {
   const [laserStatus, setLaserStatus] = useState("");
 
   // Fetch status data from the JSON file
-  fetch("https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/public/data.json")
+  fetch("https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/src/components/Data.json")
     .then((response) => response.json())
     .then((data) => {
       setDoorStatus(data.door.status);

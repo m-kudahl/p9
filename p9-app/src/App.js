@@ -19,11 +19,6 @@ return <div className="App">
   <Navbar/>
   <StatusBoxes/>
   <TimeLeft />
-<<<<<<< HEAD
-  {isPopupOpen && <Popup setPopupOpen={setPopupOpen} selectedAlert={selectedAlert} />}
-=======
-
->>>>>>> parent of b97c8e91 (Merge branch 'Jonas')
   </>
 </div>
 }

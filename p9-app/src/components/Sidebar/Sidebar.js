@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Sidebar.css';
 import StartButton from './StartButton'; // Import the new component
 import SidebarButtons from './SidebarButtons.js';

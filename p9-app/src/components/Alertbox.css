@@ -1,8 +1,8 @@
 .CenterBox {
-  height: 50%;
-  width: 37%;
+  height: 52%;
+  width: 39%;
   position: absolute;
-  top: 49%;
+  top: 47%;
   left: 52%;
   transform: translate(-50%, -50%);
   padding: 10px;
@@ -13,7 +13,7 @@
 
 .AlertHeader {
   width: 100%;
-  height: 12%;
+  height: 13%;
   background: #D9D9D9;
   color: black;
   display: flex;
@@ -26,21 +26,21 @@
   
 }
 .AlertList {
-  width: 100%;
-  height: 80%;
+  width: 90%;
+  height: 70%;
+  margin: auto;
   border-spacing: 25px;
-  overflow-y: scroll;
-  display: flex;
-  justify-content: center;
+  overflow-y: auto;
+  display: inline-block;
 
 }
 .AlertEntry {
   background: #f0f0f0;
-  padding: 20px;
   text-align: center;
-  margin: 20px;
-  width: 80%;
-  font-size: calc(1.3vw + 1.3vh);
+  margin: 1px;
+  width: 100%;
+  height: 10%;
+  font-size: calc(1.0vw + 1.0vh);
  
   
 }

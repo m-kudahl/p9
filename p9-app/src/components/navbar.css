@@ -17,6 +17,7 @@
   padding-left: 1.4px; 
   list-style: none;
   display: flex;
+ 
 }
 
 .Navbar li {
@@ -26,6 +27,7 @@
   border-right-style: solid;
   border-left-style: solid;
   border-color: #898989;
+ 
 
 }
 
@@ -43,8 +45,11 @@
 
 .Navbar li.Inactive:hover {
     background-color: #D4CFCE ;
+  
+
   }
   
   .navbar li.Inactive {
     border-bottom-style: solid;
+  
   }

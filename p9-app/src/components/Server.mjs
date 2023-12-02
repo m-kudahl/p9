@@ -12,6 +12,7 @@ app.use(cors({  //  Here we setup the credentials for CORS. Without this, the al
   credentials: true,
 }));
 
+
 let alertData = []; //  Array to store alerts
 
 // This is an endpoint. We use this one to get alerts from Github. Endpoints allow us to give a response (res) to a request (req). We are making an asynchronous (async) function, which allows us to use the await keyword. 
@@ -21,7 +22,7 @@ app.get('/api/alerts', async (req, res) => {
     const response = await fetch('https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/public/alerts.json');
     const data = await response.json();
     alertData = data; // import data from github into alertData array
-    res.json(data);
+    res.json(data); // Responds to the request with data array
     //res.status(200).json({ message: 'Alerts fetched from Github'}) // Tags response with a HTTP status code. 2xx = good 4xx = bad request 5xx = internal server error
   } catch (error) {
     console.error('Error fetching alerts from GitHub:', error);
@@ -45,6 +46,24 @@ app.put('/api/alerts', async (req, res) => {
   }
 });
 
+// Endpoint to update door status
+app.put('/api/doorstatus', async (req, res) => {
+  const updatedData = req.body;
+  console.log('Received data:', updatedData); // Add this line for debugging
+
+  if (updatedData.doorStatus === 'unlocked') {
+    res.json({ doorStatus: 'locked' }); // set door status to unlocked
+  } else if (updatedData.doorStatus === 'locked') {
+    res.json({ doorStatus: 'unlocked' }); // set door status to locked
+  } else {
+    res.status(400).json({ error: 'Invalid door status' });
+  }
+});
+
+
+
+
+
 // Endpoint to add alerts
 app.post('/api/alerts', (req, res) => {
   const newAlert = req.body; // Create new alert using input from the request
@@ -60,6 +79,22 @@ app.post('/api/alerts', (req, res) => {
   } catch (error) {
     console.error('Error adding alert on the server:', error);
     res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+let doorStatus = ' '; // Variable to store doorstatus
+// Endpoint to get door status
+app.get('/api/doorstatus', async (req, res) => {
+  try {
+    const response = await fetch('https://raw.githubusercontent.com/m-kudahl/p9/7881f92ccd8a1e26221f0360839662ab8ef7d376/p9-app/public/door.json');
+    const data = await response.json();
+    doorStatus = data.door.status; // import status of door from github into doorStatus variable
+    res.json(doorStatus) // responds to the request with data variable
+  }
+  catch (error) {
+    console.error('Error fetching doorstatus from GitHub', error);
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 });
 

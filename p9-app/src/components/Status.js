@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Status.css";
 
 export default function StatusBoxes() {
@@ -7,17 +7,23 @@ const [doorStatus, setDoorStatus] = useState();
 //const [laserStatus, setLaserStatus] = useState();
 
   // Fetch status data from the JSON file
-  fetch("http://localhost:8080/api/doorstatus")
-    .then((response) => response.json())
-    .then((data) => {
-      setDoorStatus(data);
-      //setLaserStatus(data.laser.status);
-    
-  })
-  .catch((error) => 
-    console.error('Error fetching data', error));
+  useEffect(() => {
+    const fetchDoorStatus = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/doorstatus");
+        const data = await response.json();
+        setDoorStatus(data);
+      } catch (error) {
+        console.error('Error fetching data', error);
+      }
+    };
+
+    fetchDoorStatus();
+  }, []);
    
     const toggleDoorStatus = () => {
+      console.log('Before fetch, current door status:', doorStatus);
+    
       fetch("http://localhost:8080/api/doorstatus", {
         method: "PUT",
         headers: {
@@ -27,12 +33,13 @@ const [doorStatus, setDoorStatus] = useState();
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("Response from server:", data.doorStatus);
+          console.log('After fetch, received data from server:', data.doorStatus);
           setDoorStatus(data.doorStatus);
-          console.log("Response from server:", data.doorStatus);
+          console.log('After fetch, updated door status in state:', doorStatus);
         })
         .catch((error) => console.error("Error updating door status:", error));
     };
+    
     
     
     

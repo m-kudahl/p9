@@ -49,16 +49,19 @@ app.put('/api/alerts', async (req, res) => {
 // Endpoint to update door status
 app.put('/api/doorstatus', async (req, res) => {
   const updatedData = req.body;
-  console.log('Received data:', updatedData); // Add this line for debugging
+  console.log('Received data:', updatedData);
 
-  if (updatedData.doorStatus === 'unlocked') {
-    res.json({ doorStatus: 'locked' }); // set door status to unlocked
-  } else if (updatedData.doorStatus === 'locked') {
-    res.json({ doorStatus: 'unlocked' }); // set door status to locked
+  if (updatedData.doorStatus === 'locked') {
+    res.json({ doorStatus: 'unlocked' }); // set door status to unlocked
+    console.log('Server set data to unlocked');
+  } else if (updatedData.doorStatus === 'unlocked') {
+    res.json({ doorStatus: 'locked' }); // set door status to locked
+    console.log('Server set data to locked');
   } else {
     res.status(400).json({ error: 'Invalid door status' });
   }
 });
+
 
 
 

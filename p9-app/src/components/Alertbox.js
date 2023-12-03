@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Alertbox.css';
+import Popup from './Popup';
 
 export default function Alertbox({setPopupOpen}) {
   const [alertData, setAlertData] = useState([]); // Usestate is a "hook" (function that allows components to use states). It allows us to store the current state value (alertData) and gives us a function (setAlertData) we can use to update alertData
@@ -39,10 +40,15 @@ export default function Alertbox({setPopupOpen}) {
       .catch((error) => console.error('Error fetching alert data:', error));
   }, []); // This is an "Empty dependency array" which means that the useEffect will only be run once at server start.
 
-const handleAlertClick = (index) => {
+  useEffect(() => {
+    if (selectedAlert) {
+      openPopup();
+    }
+  }, [selectedAlert]);
+
+  const handleAlertClick = (index) => {
     setSelectedAlert(alertData[index]);
-    console.log(selectedAlert);
-    openPopup();
+
   };
 
   
@@ -52,9 +58,9 @@ const handleAlertClick = (index) => {
       <div className="AlertHeader">
         ALERTS
       </div>
-        <button onClick={() => handleAddAlert('error')}>Add Error Alert</button> 
-        <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
-        <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
+      <button onClick={() => handleAddAlert('error')}>Add Error Alert</button>
+      <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
+      <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
       <table className="AlertList">
         <tbody>
           {alertData.map((alert, index) => (
@@ -69,6 +75,9 @@ const handleAlertClick = (index) => {
           ))}
         </tbody>
       </table>
+  
+      {selectedAlert && (
+        <Popup setPopupOpen={setPopupOpen} selectedAlert={selectedAlert} />
+      )}
     </div>
-  );
-}
+)}

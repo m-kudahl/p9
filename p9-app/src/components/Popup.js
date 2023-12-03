@@ -1,12 +1,7 @@
 import React from 'react';
 import './Popup.css';
 
-export default function Popup({ setPopupOpen, selectedAlert }) {
-
-  const closePopup = () => {
-    setPopupOpen(false);
-  };
-
+export default function Popup({ closePopup, selectedAlert }) {
   return (
     <div className="Popup">
       {selectedAlert && (

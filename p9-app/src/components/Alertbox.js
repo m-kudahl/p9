@@ -10,6 +10,7 @@ export default function Alertbox({setPopupOpen}) {
     setPopupOpen(true);
   };
   
+  
   const handleAddAlert = async (type) => { // Function to add new alerts
     try {  // We are using a try-catch here because inputting a line of text is (probably) an easy way to make errors (probably not needed before we implement functionality for the client to input new alerts in the browser instead of in code)
       const response = await fetch('http://localhost:8080/api/alerts', {

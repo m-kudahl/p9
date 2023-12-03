@@ -18,7 +18,7 @@ let alertData = []; //  Array to store alerts
 // This basically lets the function pause while waiting for a fetch, as well as letting the program as a whole continue working while fetching instead of freezing
 app.get('/api/alerts', async (req, res) => {    
   try {
-    const response = await fetch('https://raw.githubusercontent.com/m-kudahl/p9/main/p9-app/public/alerts.json');
+    const response = await fetch('https://raw.githubusercontent.com/m-kudahl/p9/mathias2/p9-app/public/alerts.json');
     const data = await response.json();
     alertData = data; // import data from github into alertData array
     res.json(data);

@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react";
 import './Alertbox.css';
+import Popup from './Popup';
 
-export default function Alertbox({setPopupOpen}) {
-  const [alertData, setAlertData] = useState([]); // Usestate is a "hook" (function that allows components to use states). It allows us to store the current state value (alertData) and gives us a function (setAlertData) we can use to update alertData
-  const [selectedAlert, setSelectedAlert] = useState(null); // New state to store the selected alert
-  
+export default function Alertbox() {
+  const [alertData, setAlertData] = useState([]);
+  const [selectedAlert, setSelectedAlert] = useState(null);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
   const openPopup = () => {
     setPopupOpen(true);
   };
-  
+
+  const closePopup = () => {
+    setPopupOpen(false);
+    setSelectedAlert(null); // Reset selectedAlert
+  };
+
   const handleAddAlert = async (type) => { // Function to add new alerts
     try {  // We are using a try-catch here because inputting a line of text is (probably) an easy way to make errors (probably not needed before we implement functionality for the client to input new alerts in the browser instead of in code)
       const response = await fetch('http://localhost:8080/api/alerts', {
@@ -30,31 +37,25 @@ export default function Alertbox({setPopupOpen}) {
       console.error('Error adding alert:', error);
     }
   };
-  
+
   useEffect(() => {
-    // Fetch alert data from the server
     fetch('http://localhost:8080/api/alerts')
       .then((response) => response.json())
       .then((data) => setAlertData(data))
       .catch((error) => console.error('Error fetching alert data:', error));
-  }, []); // This is an "Empty dependency array" which means that the useEffect will only be run once at server start.
+  }, []);
 
-const handleAlertClick = (index) => {
+  const handleAlertClick = (index) => {
     setSelectedAlert(alertData[index]);
-    console.log(selectedAlert);
     openPopup();
   };
 
-  
-  
   return (
     <div className="CenterBox">
-      <div className="AlertHeader">
-        ALERTS
-      </div>
-        <button onClick={() => handleAddAlert('error')}>Add Error Alert</button> 
-        <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
-        <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
+      <div className="AlertHeader">ALERTS</div>
+      <button onClick={() => handleAddAlert('error')}>Add Error Alert</button>
+      <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
+      <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
       <table className="AlertList">
         <tbody>
           {alertData.map((alert, index) => (
@@ -69,6 +70,10 @@ const handleAlertClick = (index) => {
           ))}
         </tbody>
       </table>
+
+      {isPopupOpen && selectedAlert && (
+        <Popup closePopup={closePopup} selectedAlert={selectedAlert} />
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 [
-    { "type": "error", "message": "ERROR 7: PLACEHOLDER" },
+    { "type": "error", "message": "ERROR 7: PLACEHOLDER", "description": "lol" },
     { "type": "warning", "message": "WARNING: PLACEHOLDER" },
     { "type": "info", "message": "Placeholder" }
   ]

@@ -62,7 +62,7 @@ export default function Alertbox() {
             <tr
               key={index}
               className="AlertEntry"
-              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit' }}
+              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit',  display: 'inline-block', maxWidth: '100%'}}
               onClick={() => handleAlertClick(index)}
             >
               <td>{alert.message}</td>

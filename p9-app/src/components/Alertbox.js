@@ -16,22 +16,23 @@ export default function Alertbox() {
     setSelectedAlert(null); // Reset selectedAlert
   };
 
-  const handleAddAlert = async (type) => { // Function to add new alerts
-    try {  // We are using a try-catch here because inputting a line of text is (probably) an easy way to make errors (probably not needed before we implement functionality for the client to input new alerts in the browser instead of in code)
+  const handleAddAlert = async (type) => {
+    try {
       const response = await fetch('http://localhost:8080/api/alerts', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // This shows that the content is in a .json format
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ type: type, message: 'New Alert Message' }), // This is what is sent to the server in the body. Currently this is how we input new alerts. 
+        body: JSON.stringify({ type: type, message: 'New Alert Message' }),
       });
 
       if (!response.ok) {
         throw new Error('Failed to add new alert');
-      } 
-      const updatedData = await response.json();
-      
-      setAlertData(updatedData); // Update the state of alertData which visually adds the new alert to the table in the browser
+      }
+
+      const newAlert = await response.json();
+
+      setAlertData((prevData) => [...prevData, newAlert]);
 
     } catch (error) {
       console.error('Error adding alert:', error);

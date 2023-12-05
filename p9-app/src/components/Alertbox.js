@@ -37,7 +37,7 @@ export default function Alertbox() {
       console.error('Error adding alert:', error);
     }
   };
-
+  
   useEffect(() => {
     fetch('http://localhost:8080/api/alerts')
       .then((response) => response.json())
@@ -50,30 +50,35 @@ export default function Alertbox() {
     openPopup();
   };
 
-  return (
-    <div className="CenterBox">
-      <div className="AlertHeader">ALERTS</div>
-      <button onClick={() => handleAddAlert('error')}>Add Error Alert</button>
-      <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
-      <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
-      <table className="AlertList">
-        <tbody>
-          {alertData.map((alert, index) => (
-            <tr
-              key={index}
-              className="AlertEntry"
-              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit',  display: 'inline-block', maxWidth: '100%'}}
-              onClick={() => handleAlertClick(index)}
-            >
-              <td>{alert.message}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+return (
+  <div className="CenterBox">
+    <div className="AlertHeader">ALERTS</div>
+    <button onClick={() => handleAddAlert('error')}>Add Error Alert</button>
+    <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
+    <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
+    <table className="AlertList">
+      <tbody>
+        {alertData.slice().reverse().map((alert, index) => (
+          <tr
+            key={index}
+            className="AlertEntry"
+            style={{
+              background:
+                alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit',
+              display: 'inline-block',
+              maxWidth: '100%',
+            }}
+            onClick={() => handleAlertClick(index)}
+          >
+            <td>{alert.message}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
 
-      {isPopupOpen && selectedAlert && (
-        <Popup closePopup={closePopup} selectedAlert={selectedAlert} />
-      )}
-    </div>
-  );
-}
+    {isPopupOpen && selectedAlert && (
+      <Popup closePopup={closePopup} selectedAlert={selectedAlert} />
+    )}
+  </div>
+);
+    }

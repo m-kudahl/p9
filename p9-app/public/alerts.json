@@ -10,10 +10,10 @@
   },
   {
     "type": "info",
-    "message": "Placeholder"
+    "message": "INFO: PLACEHOLDER"
   },
   {
-    "type": "warning",
-    "message": "New Alert Message"
+    "type": "error",
+    "message": "ERROR 06: DOOR NOT LOCKED"
   }
 ]

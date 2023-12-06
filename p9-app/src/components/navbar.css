@@ -22,7 +22,6 @@
   width: 50%;
   height: 100%;
   border-top-style: solid;
-  border-right-style: solid;
   border-color: #898989;
 
 }
@@ -45,5 +44,6 @@
   
   .Navbar li.Inactive {
     border-bottom-style: solid;
+    border-left-style: solid;
 
   }

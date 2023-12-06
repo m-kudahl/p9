@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { useDoorStatus } from '../Status';
+import { handleAddAlert } from '../Alertbox';
+ 
 export default function StartButton({ top, background, children }) {
   const [label, setLabel] = useState('START');
   const [buttonBackground, setButtonBackground] = useState(background);
+  const { doorStatus } = useDoorStatus(); // Use the useDoorStatus hook
+  
+  useEffect(() => {
+    // This effect will run whenever doorStatus changes
+    console.log('Door status changed:', doorStatus);
+  }, [doorStatus]);
 
   const handleClick = () => {
-    setLabel((prevLabel) => (prevLabel === 'START' ? 'PAUSE' : 'START'));
-    if (label === 'START') {
+    if (label === 'START' && doorStatus === 'locked') {
+      setLabel((prevLabel) => (prevLabel === 'START' ? 'PAUSE' : 'START'));
       setButtonBackground('#B7B7B7');
-    } else {
+    } else if (label ==='PAUSE') {
+      setLabel((prevLabel) => (prevLabel === 'START' ? 'PAUSE' : 'START'));
       setButtonBackground('#62BE59');
+    } else if (label === 'START' && doorStatus === 'unlocked') {
+      handleAddAlert('error' , 'ERROR 06: DOOR NOT LOCKED')
     }
+    console.log(doorStatus);
   };
 
   const buttonStyle = {

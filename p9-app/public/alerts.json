@@ -1,6 +1,19 @@
 [
-    { "type": "error", "message": "ERROR 7: PLACEHOLDER", "description": "lol" },
-    { "type": "warning", "message": "WARNING: PLACEHOLDER" },
-    { "type": "info", "message": "Placeholder" }
-  ]
-  
+  {
+    "type": "error",
+    "message": "ERROR 7: PLACEHOLDER",
+    "description": "lol"
+  },
+  {
+    "type": "warning",
+    "message": "WARNING: PLACEHOLDER"
+  },
+  {
+    "type": "info",
+    "message": "INFO: PLACEHOLDER"
+  },
+  {
+    "type": "error",
+    "message": "ERROR 06: DOOR NOT LOCKED"
+  }
+]

@@ -1,6 +1,5 @@
 {
-    "door": {
-      "status": "locked"
-    }
+  "door": {
+    "status": "unlocked"
   }
-  
+}

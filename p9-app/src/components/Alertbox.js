@@ -84,17 +84,23 @@ export default function Alertbox() {
 
   return (
     <div className="CenterBox">
-      <div className="AlertHeader">ALERTS</div>
+   <div className="FixedButtonsContainer">
+      <div className="AlertHeader">
+        <h1> ALERTS</h1>
+      </div>
+      
       <button onClick={() => handleAddAlertClick('error', 'NEW ERROR')}>Add Error Alert</button>
       <button onClick={() => handleAddAlertClick('warning', 'NEW WARNING')}>Add Warning Alert</button>
       <button onClick={() => handleAddAlertClick('info', 'NEW INFO')}>Add Info Alert</button>
+      </div>
+    
       <table className="AlertList">
         <tbody>
           {alertData.slice().reverse().map((alert, index) => (
             <tr
               key={index}
               className="AlertEntry"
-              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit', display: 'inline-block', maxWidth: '100%' }}
+              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit' }}
               onClick={() => handleAlertPopup(index)}
             >
               <td>{alert.message}</td>

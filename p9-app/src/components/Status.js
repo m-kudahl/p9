@@ -53,9 +53,9 @@ export default function StatusBoxes() {
       </div>
 
       <div className="LaserStatus">
-        <h2>LASER STATUS</h2>
+        <h2>MACHINE STATUS</h2>
         <div className="LaserLine"></div>
-        <h2 className="Ready"></h2>
+        <h2>READY</h2>
       </div>
     </div>
   );

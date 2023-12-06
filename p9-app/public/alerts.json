@@ -11,9 +11,5 @@
   {
     "type": "info",
     "message": "INFO: PLACEHOLDER"
-  },
-  {
-    "type": "error",
-    "message": "ERROR 06: DOOR NOT LOCKED"
   }
 ]

@@ -8,6 +8,7 @@ import TimeLeft from './components/TimeLeft.js';
 import Alertbox from './components/Alertbox.js';
 import Popup from './components/Popup.js';
 import React, { useState } from "react";
+
   
 function App(){
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -20,6 +21,7 @@ return <div className="App">
   <Navbar/>
   <StatusBoxes/>
   <TimeLeft />
+
   {isPopupOpen && <Popup setPopupOpen={setPopupOpen} selectedAlert={selectedAlert} />}
   </>
 </div>

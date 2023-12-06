@@ -1,46 +1,67 @@
 .CenterBox {
-  height: 52%;
+  height: 290px;
   width: 39%;
-  position: absolute;
+  position: relative; 
   top: 47%;
   left: 52%;
+  border-radius: 8px;
   transform: translate(-50%, -50%);
-  padding: 5px;
+  padding: 7px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+ 
 }
 
 
 .AlertHeader {
-  width: 100%;
-  height: 13%;
+  width: 98%;
+  height: 3em;
   background: #D9D9D9;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   color: black;
-  display: flex;
-  align-items: center;
+  display: flex; 
+  font-size: calc(0.7vw + 0.7vh);
+  font-weight: 200;
+  border-radius: 10px;
   justify-content: center;
+  align-items: center; 
   padding: 5px;
-  text-align: center;
-  font-size: calc(1.5vw + 1.5vh);
-  font-weight: 545;
-  
+  position: sticky; /* Make the header sticky */
+  top: 0;
+  z-index: 1;
 }
 .AlertList {
   width: 100%;
   height: 70%;
   margin: 0%;
-  border-spacing: 25px;
-  overflow-y: auto;
-  display: inline-block;
-
+  max-height: 300px;
+  border-spacing: 10px;
 }
 .AlertEntry {
   background: #f0f0f0;
+  margin: 7px;
+  width: 95%;
+  height: 3em;
+  font-size: calc(0.95vw + 0.95vh);
+  display: table;
   text-align: center;
-  margin: 4px;
-  width: 100%;
-  max-height: 3em;
-  font-size: calc(1.0vw + 1.0vh);
- 
+
   
 }
+
+.FixedButtonsContainer {
+  position: sticky;
+  top: -8px;; /* Adjust top position as needed */
+  background: white; /* Add background color if necessary */
+  padding: auto;
+}
+
+.FixedButtonsContainer button {
+  margin-right: 10px; /* Adjust margin between buttons */
+  display: inline-block;
+margin-top: 10px;
+
+}
+
+

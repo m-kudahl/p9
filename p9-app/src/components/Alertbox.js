@@ -49,19 +49,23 @@ const handleAlertClick = (index) => {
   
   return (
     <div className="CenterBox">
+   <div className="FixedButtonsContainer">
       <div className="AlertHeader">
-        ALERTS
+        <h1> ALERTS</h1>
       </div>
+      
         <button onClick={() => handleAddAlert('error')}>Add Error Alert</button> 
         <button onClick={() => handleAddAlert('warning')}>Add Warning Alert</button>
         <button onClick={() => handleAddAlert('info')}>Add Info Alert</button>
+      </div>
+    
       <table className="AlertList">
         <tbody>
           {alertData.map((alert, index) => (
             <tr
               key={index}
               className="AlertEntry"
-              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit',  display: 'inline-block', maxWidth: '100%'}}
+              style={{ background: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'orange' : 'inherit'}}
               onClick={() => handleAlertClick(index)}
             >
               <td>{alert.message}</td>

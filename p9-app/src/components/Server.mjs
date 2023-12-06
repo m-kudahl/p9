@@ -17,8 +17,8 @@ let alertData = [];
 let doorStatus = ' ';
 
 // Use the path module to create the absolute paths to your local JSON files
-const alertsFilePath = path.join('G:', 'p9', 'p9-app', 'public', 'alerts.json');
-const doorStatusFilePath = path.join('G:', 'p9', 'p9-app', 'public', 'door.json');
+const alertsFilePath = path.join('C:', 'Users', 'Mathi', 'Documents', 'p9', 'p9', 'p9-app', 'public', 'alerts.json');
+const doorStatusFilePath = path.join('C:', 'Users', 'Mathi', 'Documents', 'p9', 'p9', 'p9-app', 'public', 'door.json');
 
 app.get('/api/alerts', async (req, res) => {
   try {
@@ -68,11 +68,11 @@ app.put('/api/doorstatus', async (req, res) => {
   try {
     let newStatus;
 
-    if (updatedData.doorStatus === 'locked') {
-      newStatus = 'unlocked';
+    if (updatedData.doorStatus === 'LOCKED') {
+      newStatus = 'UNLOCKED';
       console.log('Server set data to unlocked');
-    } else if (updatedData.doorStatus === 'unlocked') {
-      newStatus = 'locked';
+    } else if (updatedData.doorStatus === 'UNLOCKED') {
+      newStatus = 'LOCKED';
       console.log('Server set data to locked');
     } else {
       return res.status(400).json({ error: 'Invalid door status' });

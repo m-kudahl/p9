@@ -13,13 +13,13 @@ export default function StartButton({ top, background, children }) {
   }, [doorStatus]);
 
   const handleClick = () => {
-    if (label === 'START' && doorStatus === 'locked') {
+    if (label === 'START' && doorStatus === 'LOCKED') {
       setLabel((prevLabel) => (prevLabel === 'START' ? 'PAUSE' : 'START'));
       setButtonBackground('#B7B7B7');
     } else if (label ==='PAUSE') {
       setLabel((prevLabel) => (prevLabel === 'START' ? 'PAUSE' : 'START'));
       setButtonBackground('#62BE59');
-    } else if (label === 'START' && doorStatus === 'unlocked') {
+    } else if (label === 'START' && doorStatus === 'UNLOCKED') {
       handleAddAlert('error' , 'ERROR 06: DOOR NOT LOCKED')
     }
     console.log(doorStatus);

@@ -17,8 +17,8 @@ let alertData = [];
 let doorStatus = ' ';
 
 // Use the path module to create the absolute paths to your local JSON files
-const alertsFilePath = path.join('C:', 'Users', 'Mathi', 'Documents', 'p9', 'p9', 'p9-app', 'public', 'alerts.json');
-const doorStatusFilePath = path.join('C:', 'Users', 'Mathi', 'Documents', 'p9', 'p9', 'p9-app', 'public', 'door.json');
+const alertsFilePath = path.resolve(process.cwd(), '..', '..', 'public', 'alerts.json');
+const doorStatusFilePath = path.resolve(process.cwd(), '..', '..', 'public', 'door.json');
 
 app.get('/api/alerts', async (req, res) => {
   try {

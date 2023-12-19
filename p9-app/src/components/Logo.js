@@ -1,12 +1,12 @@
 import React from 'react';
 import './Logo.css';
-import Migatronic_logo from './Images/Migatronic_logo.png'
+import Placeholder from './Images/Placeholder.png'
 
 
 function Image(){
     return(
     <div>
-        <img src={Migatronic_logo} alt='migatronic' className='Image'/>
+        <img src={Placeholder} alt='placeholder' className='Image'/>
     </div>
     )
 }

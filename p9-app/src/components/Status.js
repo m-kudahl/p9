@@ -13,7 +13,7 @@ export const useDoorStatus = () => {
       const data = await response.json();
       setDoorStatus(data); // Update the door status in the state
     } catch (error) {
-      console.error('Error fetching door status:', error);
+      console.error("Error fetching door status:", error);
     }
   };
   // Fetch door status when the component using this hook mounts
@@ -29,7 +29,7 @@ export default function StatusBoxes() {
 
   // Function to toggle the door status
   const toggleDoorStatus = () => {
-    console.log('Before fetch, current door status:', doorStatus);
+    console.log("Before fetch, current door status:", doorStatus);
 
     // Send a PUT request to update the door status on the server
     fetch("http://localhost:8080/api/doorstatus", {
@@ -41,10 +41,10 @@ export default function StatusBoxes() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('After fetch, received data from server:', data.doorStatus);
+        console.log("After fetch, received data from server:", data.doorStatus);
         // Update the door status using response
         setDoorStatus(data.doorStatus);
-        console.log('After fetch, updated door status to:', data.doorStatus);
+        console.log("After fetch, updated door status to:", data.doorStatus);
       })
       .catch((error) => console.error("Error updating door status:", error));
   };

@@ -24,15 +24,11 @@ let doorStatus = " ";
 // Here we load the json files, by going up from the current working directory and going to the public folder.
 const alertsFilePath = path.resolve(
   process.cwd(),
-  "..",
-  "..",
   "public",
   "alerts.json"
 );
 const doorStatusFilePath = path.resolve(
   process.cwd(),
-  "..",
-  "..",
   "public",
   "door.json"
 );

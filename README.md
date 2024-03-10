@@ -85,7 +85,7 @@ This is the repository for the LaserLink interface prototype.
 
 ## Usage
 
-**To run the server** 
+**1. To start the local server** 
 
 In a terminal, navigate to the \p9-app\src\components location and run the following command
 
@@ -93,7 +93,7 @@ In a terminal, navigate to the \p9-app\src\components location and run the follo
   node server.mjs
 ```
 
-**To run the React client**
+**2. To run the app**
 
 In a terminal, navigate to the \p9-app\ location and run the following command
 

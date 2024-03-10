@@ -2,7 +2,7 @@
 # LaserLink
 
 This is the repository for the LaserLink interface prototype.
-
+Part of the [Flexible Laser Integrated Production project](https://vbn.aau.dk/en/projects/fleksibel-laser-integreret-produktion).
 
 ## Authors
 
@@ -68,7 +68,6 @@ This is the repository for the LaserLink interface prototype.
 2. **Install dependencies**
 
 ```bash
-  cd p9-app
   npm install 
   npm install node-fetch
   npm install express
@@ -76,10 +75,11 @@ This is the repository for the LaserLink interface prototype.
 ```
 ## Features
 
+- Local API (For testing)
 - Debug buttons to add new alerts
-- Clickable alerts opening popup info box
+- Clickable alerts
 - Start button functionality 
-  - Checks doorstatus and starts if door is locked. If door is unlocked an error alert is added to the alertbox
+  - Checks doorstatus and starts if door is locked. If door is unlocked an error alert is added to the alert box
 
 
 
